@@ -1,0 +1,15 @@
+GET
+/index2.html
+200
+900
+8.022ms
+POST
+/index2.html
+200
+
+1.463ms
+GET
+/index2.html
+200
+900
+1.228ms

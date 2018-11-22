@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+
+	<script>
+		function submitData() {
+			var obj = {
+				firstname: document.getElementById('txtFirstName').value,
+				lastname: document.getElementById('txtLastName').value,
+			};
+			var xhr = new XMLHttpRequest();
+			xhr.open('POST', 'index2.html', true);
+			xhr.onload = function (e) {
+				if (this.status == 200) {
+					document.getElementById('result').innerHTML = this.response;
+				}
+			};
+			xhr.send(JSON.stringify(obj));
+		}
+	</script>
+</head>
+
+<body>
+	<form id="form1">
+		firstname:
+		<input type="text" id="txtFirstName" name='firstname' placeholder='请输入firstname' /></br>
+		lastname:
+		<input type="text" id="txtLastName" name="lastname" placeholder="请输入lastname" /></br>
+		<input type="button" value="submit" onclick="submitData()" />
+	</form>
+	<output id="result"></output>
+</body>
+
+</html>
